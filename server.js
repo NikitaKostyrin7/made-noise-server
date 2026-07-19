@@ -54,7 +54,7 @@ app.post('/api/orders', async (req, res) => {
   let orderId;
   try {
     orderId = await insertOrder({
-      created_at: new Date().toISOString().slice(0, 19).replace('T', ' '), // MySQL DATETIME format
+      created_at: new Date().toISOString(),
       fio: order.customer.fio,
       email: order.customer.email,
       phone: order.customer.phone,
